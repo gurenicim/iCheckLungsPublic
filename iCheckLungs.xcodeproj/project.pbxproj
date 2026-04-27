@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE1E0D282F785E2300F584AD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CE1E0D272F785E2300F584AD /* FirebaseMessaging */; };
+		CE1E0D2B2F785E7C00F584AD /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = CE1E0D2A2F785E7C00F584AD /* GoogleSignIn */; };
+		CE1E0D2D2F785E7C00F584AD /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE1E0D2C2F785E7C00F584AD /* GoogleSignInSwift */; };
+		CE7D56C62F840EB600122A12 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = CE7D56C52F840EB600122A12 /* RevenueCat */; };
+		CE9B3F262F71DDFD00859DB9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CE9B3F252F71DDFD00859DB9 /* FirebaseAnalytics */; };
+		CE9B3F282F71DDFD00859DB9 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = CE9B3F272F71DDFD00859DB9 /* FirebaseAppCheck */; };
+		CE9B3F2A2F71DDFD00859DB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE9B3F292F71DDFD00859DB9 /* FirebaseAuth */; };
+		CE9B3F2C2F71DDFD00859DB9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CE9B3F2B2F71DDFD00859DB9 /* FirebaseCrashlytics */; };
+		CE9B3F2E2F71DDFD00859DB9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE9B3F2D2F71DDFD00859DB9 /* FirebaseFirestore */; };
+		CE9B3F302F71DDFD00859DB9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CE9B3F2F2F71DDFD00859DB9 /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE9B3F162F71DC8900859DB9 /* iCheckLungs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCheckLungs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CE9B5F702F741E3400859DB9 /* Exceptions for "iCheckLungs" folder in "iCheckLungs" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CE9B3F152F71DC8900859DB9 /* iCheckLungs */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CE9B3F182F71DC8900859DB9 /* iCheckLungs */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CE9B5F702F741E3400859DB9 /* Exceptions for "iCheckLungs" folder in "iCheckLungs" target */,
+			);
+			path = iCheckLungs;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE9B3F132F71DC8900859DB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1E0D2D2F785E7C00F584AD /* GoogleSignInSwift in Frameworks */,
+				CE9B3F282F71DDFD00859DB9 /* FirebaseAppCheck in Frameworks */,
+				CE7D56C62F840EB600122A12 /* RevenueCat in Frameworks */,
+				CE1E0D2B2F785E7C00F584AD /* GoogleSignIn in Frameworks */,
+				CE9B3F2C2F71DDFD00859DB9 /* FirebaseCrashlytics in Frameworks */,
+				CE1E0D282F785E2300F584AD /* FirebaseMessaging in Frameworks */,
+				CE9B3F2A2F71DDFD00859DB9 /* FirebaseAuth in Frameworks */,
+				CE9B3F2E2F71DDFD00859DB9 /* FirebaseFirestore in Frameworks */,
+				CE9B3F262F71DDFD00859DB9 /* FirebaseAnalytics in Frameworks */,
+				CE9B3F302F71DDFD00859DB9 /* FirebaseStorage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE9B3F0D2F71DC8900859DB9 = {
+			isa = PBXGroup;
+			children = (
+				CE9B3F182F71DC8900859DB9 /* iCheckLungs */,
+				CE9B3F172F71DC8900859DB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE9B3F172F71DC8900859DB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B3F162F71DC8900859DB9 /* iCheckLungs.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE9B3F152F71DC8900859DB9 /* iCheckLungs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE9B3F212F71DC8A00859DB9 /* Build configuration list for PBXNativeTarget "iCheckLungs" */;
+			buildPhases = (
+				CE9B3F122F71DC8900859DB9 /* Sources */,
+				CE9B3F132F71DC8900859DB9 /* Frameworks */,
+				CE9B3F142F71DC8900859DB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CE9B3F182F71DC8900859DB9 /* iCheckLungs */,
+			);
+			name = iCheckLungs;
+			packageProductDependencies = (
+				CE9B3F252F71DDFD00859DB9 /* FirebaseAnalytics */,
+				CE9B3F272F71DDFD00859DB9 /* FirebaseAppCheck */,
+				CE9B3F292F71DDFD00859DB9 /* FirebaseAuth */,
+				CE9B3F2B2F71DDFD00859DB9 /* FirebaseCrashlytics */,
+				CE9B3F2D2F71DDFD00859DB9 /* FirebaseFirestore */,
+				CE9B3F2F2F71DDFD00859DB9 /* FirebaseStorage */,
+				CE1E0D272F785E2300F584AD /* FirebaseMessaging */,
+				CE1E0D2A2F785E7C00F584AD /* GoogleSignIn */,
+				CE1E0D2C2F785E7C00F584AD /* GoogleSignInSwift */,
+				CE7D56C52F840EB600122A12 /* RevenueCat */,
+			);
+			productName = iCheckLungs;
+			productReference = CE9B3F162F71DC8900859DB9 /* iCheckLungs.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE9B3F0E2F71DC8900859DB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					CE9B3F152F71DC8900859DB9 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = CE9B3F112F71DC8900859DB9 /* Build configuration list for PBXProject "iCheckLungs" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE9B3F0D2F71DC8900859DB9;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CE1E0D292F785E7C00F584AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				CE7D56C42F840EB600122A12 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CE9B3F172F71DC8900859DB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE9B3F152F71DC8900859DB9 /* iCheckLungs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE9B3F142F71DC8900859DB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE9B3F122F71DC8900859DB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CE9B3F1F2F71DC8A00859DB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q55FUPDXJ2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE9B3F202F71DC8A00859DB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q55FUPDXJ2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE9B3F222F71DC8A00859DB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iCheckLungs/iCheckLungs.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q55FUPDXJ2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iCheckLungs/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "iCheckLungs needs camera access to capture radiology scans for analysis.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "iCheckLungs needs photo library access to select radiology scans for analysis.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guren.iCheckLungs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE9B3F232F71DC8A00859DB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iCheckLungs/iCheckLungs.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q55FUPDXJ2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iCheckLungs/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "iCheckLungs needs camera access to capture radiology scans for analysis.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "iCheckLungs needs photo library access to select radiology scans for analysis.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guren.iCheckLungs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE9B3F112F71DC8900859DB9 /* Build configuration list for PBXProject "iCheckLungs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE9B3F1F2F71DC8A00859DB9 /* Debug */,
+				CE9B3F202F71DC8A00859DB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE9B3F212F71DC8A00859DB9 /* Build configuration list for PBXNativeTarget "iCheckLungs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE9B3F222F71DC8A00859DB9 /* Debug */,
+				CE9B3F232F71DC8A00859DB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE1E0D292F785E7C00F584AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+		CE7D56C42F840EB600122A12 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.67.1;
+			};
+		};
+		CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE1E0D272F785E2300F584AD /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		CE1E0D2A2F785E7C00F584AD /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE1E0D292F785E7C00F584AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		CE1E0D2C2F785E7C00F584AD /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE1E0D292F785E7C00F584AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		CE7D56C52F840EB600122A12 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE7D56C42F840EB600122A12 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		CE9B3F252F71DDFD00859DB9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CE9B3F272F71DDFD00859DB9 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		CE9B3F292F71DDFD00859DB9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CE9B3F2B2F71DDFD00859DB9 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		CE9B3F2D2F71DDFD00859DB9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CE9B3F2F2F71DDFD00859DB9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9B3F242F71DDFD00859DB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CE9B3F0E2F71DC8900859DB9 /* Project object */;
+}
