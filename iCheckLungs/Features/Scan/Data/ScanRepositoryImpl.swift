@@ -84,10 +84,13 @@ final class ScanRepositoryImpl: ScanRepository {
 
     func fetchResult(userId: String, scanId: String) async throws -> ScanResult {
         let data = try await firestoreService.fetchScan(uid: userId, scanId: scanId)
-        guard
-            let dto = ScanRecordDTO(scanId: scanId, data: data),
-            let result = dto.toDomain(userId: userId)
-        else {
+        guard let dto = ScanRecordDTO(scanId: scanId, data: data) else {
+            throw DomainError.jobNotFound
+        }
+        if dto.status == "failed" {
+            throw DomainError.scanFailed(dto.errorMessage ?? "Analysis could not be completed.")
+        }
+        guard let result = dto.toDomain(userId: userId) else {
             throw DomainError.jobNotFound
         }
         return result

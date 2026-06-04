@@ -13,15 +13,15 @@ import Combine
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var isPurchased = false
-    
+
     private let subscriptionRepository: SubscriptionRepository
     private let authRepository: AuthRepositoryImpl
-    
+
     init(subscriptionRepository: SubscriptionRepository, authRepository: AuthRepositoryImpl) {
         self.subscriptionRepository = subscriptionRepository
         self.authRepository = authRepository
     }
-    
+
     func loadOfferings() async {
         isLoading = true
         errorMessage = nil
@@ -32,14 +32,13 @@ import Combine
         }
         isLoading = false
     }
-    
+
     func purchase(_ offering: SubscriptionOffering) async {
         isLoading = true
         errorMessage = nil
         do {
-            try await subscriptionRepository.purchase(offering)
-            // Refresh profile so scansRemaining / plan update immediately
-            await authRepository.refreshProfile()
+            let result = try await subscriptionRepository.purchase(offering)
+            try await authRepository.updateSubscriptionPlan(plan: result.plan, periodEnd: result.expirationDate)
             isPurchased = true
         } catch let domainError as DomainError {
             if case .networkError(let msg) = domainError, msg == "Purchase cancelled" {
@@ -52,16 +51,19 @@ import Combine
         }
         isLoading = false
     }
-    
+
     func restorePurchases() async {
         isLoading = true
         errorMessage = nil
         do {
-            try await subscriptionRepository.restorePurchases()
-            await authRepository.refreshProfile()
-            isPurchased = true
+            if let result = try await subscriptionRepository.restorePurchases() {
+                try await authRepository.updateSubscriptionPlan(plan: result.plan, periodEnd: result.expirationDate)
+                isPurchased = true
+            } else {
+                errorMessage = "No active purchases found to restore."
+            }
         } catch {
-            errorMessage = "No purchases to restore."
+            errorMessage = "Restore failed. Please try again."
         }
         isLoading = false
     }

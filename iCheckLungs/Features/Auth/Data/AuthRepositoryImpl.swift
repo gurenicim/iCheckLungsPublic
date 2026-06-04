@@ -134,6 +134,18 @@ final class AuthRepositoryImpl: AuthRepository {
         authStateSubject.send(.authenticated(profile))
     }
 
+    func updateSubscriptionPlan(plan: UserPlan, periodEnd: Date?) async throws {
+        guard let uid = Auth.auth().currentUser?.uid else { throw DomainError.unauthorized }
+        try await firestoreService.updateUserSubscription(
+            uid: uid,
+            plan: plan.rawValue,
+            scansLimit: plan.scansLimit,
+            scansRemaining: plan.scansLimit,
+            periodEnd: periodEnd
+        )
+        await refreshProfile()
+    }
+
     // MARK: - Apple Sign-In Nonce
 
     func generateNonce() -> String {

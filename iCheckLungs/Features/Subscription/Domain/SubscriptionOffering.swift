@@ -5,6 +5,7 @@
 //  Created by Guren Icim on 6.04.2026.
 //
 
+
 import Foundation
 
 struct SubscriptionOffering: Identifiable, Equatable {
@@ -13,6 +14,11 @@ struct SubscriptionOffering: Identifiable, Equatable {
     let priceString: String  // e.g. "$2.99/week"
     let scansPerPeriod: Int
     let period: SubscriptionPeriod
+}
+
+struct PurchaseResult {
+    let plan: UserPlan
+    let expirationDate: Date?
 }
 
 enum SubscriptionPeriod: String {

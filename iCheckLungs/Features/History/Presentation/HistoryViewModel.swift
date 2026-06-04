@@ -15,6 +15,9 @@ import Combine
     /// ScanViewModel subscribes to this as an FCM fallback.
     let scanCompletedPublisher = PassthroughSubject<(scanId: String, userId: String), Never>()
 
+    /// Emits (scanId, userId) when the Firestore listener sees the active pending scan flip to .failed.
+    let scanFailedPublisher = PassthroughSubject<(scanId: String, userId: String), Never>()
+
     private let observeHistoryUseCase: ObserveHistoryUseCase
     private let historyRepository: HistoryRepository
     private var listenerHandle: HistoryListenerHandle?
@@ -41,7 +44,7 @@ import Combine
 
                 // Mark stale pending jobs as failed (pending > 15 min, not the current active job)
                 let pendingScanId = UserDefaults.standard.string(forKey: "pendingScanId")
-                let staleThreshold = Date().addingTimeInterval(-15 * 60)
+                let staleThreshold = Date().addingTimeInterval(-5 * 60)
                 let cleaned = updatedItems.map { item -> ScanHistoryItem in
                     guard item.status == .pending,
                           item.id != pendingScanId,
@@ -63,6 +66,12 @@ import Combine
                 if let pendingScanId,
                    let doneItem = cleaned.first(where: { $0.id == pendingScanId && $0.status == .done }) {
                     self.scanCompletedPublisher.send((scanId: doneItem.id, userId: userId))
+                }
+
+                // If the tracked pending scan explicitly failed, notify ScanViewModel
+                if let pendingScanId,
+                   let failedItem = cleaned.first(where: { $0.id == pendingScanId && $0.status == .failed }) {
+                    self.scanFailedPublisher.send((scanId: failedItem.id, userId: userId))
                 }
             }
         }

@@ -76,5 +76,11 @@ final class AppDependencies {
                 Task { await sv.onScanComplete(scanId: payload.scanId, userId: payload.userId) }
             }
             .store(in: &cancellables)
+
+        historyViewModel.scanFailedPublisher
+            .sink { payload in
+                Task { await sv.onScanFailed(scanId: payload.scanId) }
+            }
+            .store(in: &cancellables)
     }
 }

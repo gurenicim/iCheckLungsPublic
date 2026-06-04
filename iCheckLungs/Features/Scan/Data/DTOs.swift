@@ -26,6 +26,7 @@ struct ScanRecordDTO {
     let findings: String?
     let confidence: String?
     let rawOutput: String?
+    let errorMessage: String?
     let createdAt: Timestamp?
     let completedAt: Timestamp?
 
@@ -36,6 +37,7 @@ struct ScanRecordDTO {
         self.findings = data["findings"] as? String
         self.confidence = data["confidence"] as? String
         self.rawOutput = data["raw_output"] as? String
+        self.errorMessage = data["error"] as? String
         self.createdAt = data["createdAt"] as? Timestamp
         self.completedAt = data["completedAt"] as? Timestamp
     }

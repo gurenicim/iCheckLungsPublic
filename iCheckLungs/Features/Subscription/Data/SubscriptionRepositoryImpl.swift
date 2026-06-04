@@ -9,7 +9,7 @@ import Foundation
 import RevenueCat
 
 final class SubscriptionRepositoryImpl: SubscriptionRepository {
-    // Maps offering id to RC Package, populated during fetchOffering
+    // Maps offering id → RC Package, populated during fetchOfferings()
     private var packageCache: [String: Package] = [:]
 
     func fetchOfferings() async throws -> [SubscriptionOffering] {
@@ -29,7 +29,7 @@ final class SubscriptionRepositoryImpl: SubscriptionRepository {
         return result.sorted { $0.period == .weekly && $1.period == .monthly }
     }
 
-    func purchase(_ offering: SubscriptionOffering) async throws {
+    func purchase(_ offering: SubscriptionOffering) async throws -> PurchaseResult {
         guard let package = packageCache[offering.id] else {
             throw DomainError.unknown
         }
@@ -37,10 +37,30 @@ final class SubscriptionRepositoryImpl: SubscriptionRepository {
         if result.userCancelled {
             throw DomainError.networkError("Purchase cancelled")
         }
+        let expiry = result.customerInfo.entitlements.active.values.first?.expirationDate
+        let plan: UserPlan = offering.period == .weekly ? .weekly : .monthly
+        return PurchaseResult(plan: plan, expirationDate: expiry)
     }
 
-    func restorePurchases() async throws {
-        _ = try await Purchases.shared.restorePurchases()
+    func restorePurchases() async throws -> PurchaseResult? {
+        let customerInfo = try await Purchases.shared.restorePurchases()
+        guard !customerInfo.activeSubscriptions.isEmpty else { return nil }
+
+        if packageCache.isEmpty {
+            _ = try? await fetchOfferings()
+        }
+
+        for productId in customerInfo.activeSubscriptions {
+            for (_, package) in packageCache where package.storeProduct.productIdentifier == productId {
+                let plan: UserPlan = package.packageType == .weekly ? .weekly : .monthly
+                let expiry = customerInfo.entitlements.active.values
+                    .first(where: { $0.productIdentifier == productId })?.expirationDate
+                return PurchaseResult(plan: plan, expirationDate: expiry)
+            }
+        }
+
+        let expiry = customerInfo.entitlements.active.values.first?.expirationDate
+        return PurchaseResult(plan: .monthly, expirationDate: expiry)
     }
 
     // MARK: - Private

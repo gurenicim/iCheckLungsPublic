@@ -30,7 +30,7 @@ enum ScanPhase {
     private static let pendingScanIdKey        = "pendingScanId"
     private static let pendingUserIdKey        = "pendingUserId"
     private static let pendingSubmittedAtKey   = "pendingSubmittedAt"
-    private static let staleThresholdSeconds: TimeInterval = 15 * 60
+    private static let staleThresholdSeconds: TimeInterval = 5 * 60
 
     private var hasResumed = false
 
@@ -121,10 +121,30 @@ enum ScanPhase {
                 // Stale job — discard it silently
                 clearPendingScan()
             }
+        } catch let domainError as DomainError {
+            // Backend explicitly failed — clear the pending scan and tell the user
+            clearPendingScan()
+            scanPhase = .failed(domainError)
         } catch {
-            // Leave in idle, don't surface stale errors on relaunch
+            // Leave in idle, don't surface unexpected errors on relaunch
             clearPendingScan()
         }
+    }
+
+    // MARK: - Live failure notification
+
+    func onScanFailed(scanId: String) {
+        let isTracked: Bool
+        if case .pending(let id) = scanPhase, id == scanId {
+            isTracked = true
+        } else if UserDefaults.standard.string(forKey: Self.pendingScanIdKey) == scanId {
+            isTracked = true
+        } else {
+            isTracked = false
+        }
+        guard isTracked else { return }
+        clearPendingScan()
+        scanPhase = .failed(.scanFailed("Analysis could not be completed. Please try again."))
     }
 
     // MARK: - Helpers

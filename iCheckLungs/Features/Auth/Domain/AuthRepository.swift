@@ -20,4 +20,5 @@ protocol AuthRepository {
     func signOut() throws
     func updateFCMToken(_ token: String) async throws
     func refreshProfile() async
+    func updateSubscriptionPlan(plan: UserPlan, periodEnd: Date?) async throws
 }

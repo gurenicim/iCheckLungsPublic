@@ -5,6 +5,7 @@
 //  Created by Guren Icim on 6.04.2026.
 //
 
+
 import SwiftUI
 
 struct PaywallView: View {
